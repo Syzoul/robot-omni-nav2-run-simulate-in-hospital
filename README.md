@@ -75,3 +75,5 @@ Enter `q` to finish selecting rooms
 Notes:
 Room indices are limited from 1 to 18
 Duplicate room selections are not allowed
+<img width="507" height="910" alt="image" src="https://github.com/user-attachments/assets/3a3e6f89-1cc5-49d2-96a4-0b34ffbe357d" />
+

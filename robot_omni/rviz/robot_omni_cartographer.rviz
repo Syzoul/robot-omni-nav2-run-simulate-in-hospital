@@ -1,0 +1,124 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Front_Lidar1
+        - /Rear_Lidar1
+        - /Map1
+        - /TF1
+      Splitter Ratio: 0.39
+    Tree Height: 347
+  - Class: rviz_common/Selection
+    Name: Selection
+  - Class: rviz_common/Tool Properties
+    Name: Tool Properties
+  - Class: rviz_common/Views
+    Name: Views
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Reference Frame: <Fixed Frame>
+      Value: true
+    
+    # HIỂN THỊ CÂY TỌA ĐỘ
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Value: true
+
+    # LIDAR PHÍA TRƯỚC (MÀU ĐỎ)
+    - Alpha: 1
+      Class: rviz_default_plugins/LaserScan
+      Color: 255; 0; 0
+      Enabled: true
+      Name: Front_Lidar
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan_front_raw
+      Size (m): 0.03
+      Value: true
+
+    # LIDAR PHÍA SAU (MÀU XANH LÁ)
+    - Alpha: 1
+      Class: rviz_default_plugins/LaserScan
+      Color: 0; 255; 0
+      Enabled: true
+      Name: Rear_Lidar
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan_rear_raw
+      Size (m): 0.03
+      Value: true
+
+    # BẢN ĐỒ TỪ CARTOGRAPHER (QUAN TRỌNG NHẤT)
+    - Alpha: 0.7
+      Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /map
+      Value: true
+
+    # MÔ HÌNH ROBOT 3D
+    - Class: rviz_default_plugins/RobotModel
+      Description Topic: /robot_description
+      Enabled: true
+      Name: RobotModel
+      Visual Enabled: true
+      Value: true
+
+    # ĐIỂM LASER ĐÃ KHỚP (DỮ LIỆU NỘI BỘ CARTOGRAPHER)
+    - Alpha: 1
+      Class: rviz_default_plugins/PointCloud2
+      Color: 0; 255; 255
+      Color Transformer: FlatColor
+      Enabled: true
+      Name: Scan_Matched_Points
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan_matched_points2
+      Size (m): 0.01
+      Value: true
+
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/SetGoal
+      Topic: /goal_pose
+    - Class: rviz_default_plugins/SetInitialPose
+      Topic: /initialpose
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Current View
+      Target Frame: map
+      Value: TopDownOrtho (rviz_default_plugins)

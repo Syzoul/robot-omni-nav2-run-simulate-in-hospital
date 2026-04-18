@@ -1,1 +1,0 @@
-# robot-omni-nav2-run-simulate-in-hospital
